@@ -4,9 +4,6 @@
 
 
 
-
-
-
 <!doctype html>
 <html lang="zh-Hans">
 
@@ -27,9 +24,9 @@ src="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js">
   
 </head>
 
-<body id="body-home-bg">
+<body id="body-x">
 <div id="layout-content">
-  <div id="menu-outer-home">
+  <div id="menu-outer-x">
   <div id="menu-inner">
     
     
@@ -56,16 +53,39 @@ src="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js">
     <div id="content-inner">
       
       
+  <article class="markdown-body">
+    <h1 id="post-title">大家好
+       
+        <div id="post-time" datetime="2017-03-12T03:20:26.919Z">
+          2017-03-12
+        </div>
+      
+    </h1>
+    <p>##第一次搭建自己的博客</p>
+<p>###好开心</p>
+
+  </article>
+
   
+    
+    
+      <div id="page-prev-next">
+        
+        
+          <div></div> 
+        
 
-<video id="bgvideo" autoplay loop poster=/images/background.png>
-  <source src=http://cdn.calm.com/scenes/scene-Qqkzy9k7Eo.mp4?v=1418162238190 type="video/mp4">
-</video>
-
-
-
-
-  <div id="play-button" >
+        
+        
+          <a id="page-next-a" href="/2017/03/11/hello-world/"> Hellow world → </a>
+        
+      </div>
+    
+    
+    
+    
+      
+      <div id="play-button"  style="background-color: #6d5aca; border: solid 2px #6d5aca;">
   <img id="play-img" src="/images/playback_play.png"></img>
 </div>
 <audio id="bgaudio" loop="loop" preload="none"> 
@@ -88,94 +108,40 @@ $(document).ready(function(){
   });
 });
 </script>
-
-
-
-
-<div id="me-button">
-		<img id="play-img" src="/images/me_n.png">
-		</img>
-</div>
-
-<div id="social-div">
-
-
-    
-    
-    <a class="social-a" href="http://sighttp.qq.com/msgrd?v=3&uin=1160201700&site=&menu=yes" target="_blank">
-        <img src="/images/weibo.png">
-    </a>
     
 
     
     
-    <a class="social-a" href="https://github.com/iHongRen" target="_blank">
-        <img src="/images/github.png">
-    </a>
-    
 
-    
-    
-    <a class="social-a" href="https://twitter.com/ihongren" target="_blank">
-        <img src="/images/twitter.png">
-    </a>
-    
-
-
-</div>
-
-
-<div id="about-me">
-  <div id="about-me-inner">
-    <article class="markdown-body"></article>
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div id="reward_comment">文章对我有帮助，打赏作者</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechatpay.png" alt="付丽杰 WeChat Pay"/>
+          <p>微信</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay.png" alt="付丽杰 Alipay"/>
+          <p>支付宝</p>
+        </div> 
+      
+    </div>
   </div>
-</div>
 
 
-<!--[if lt IE 9]>
-<script>
-	document.createElement('video');
-</script>
-<![endif]-->
-
-
-<script>
-
-$(document).ready(function(){
-  //判断是否该显示’关于我‘
-  if( "home_about"  == 'home_about') {
-    $("#about-me").hide(0);
-
-    //加载about(关于)读取文件
-    var s = $('article').html();
-    if (s.length < 2) {
-      var url = window.location.protocol+"//"+window.location.host+"/about/";
-      $.ajax({ 
-          type: "GET", 
-          url: url, 
-          dataType: "html", 
-          success: function (data) { 
-            $('article').html($(data).find('article').html());//解析about的html
-            $("#about-me").css({"visibility": "visible"}).delay(100);
-            $("#about-me").slideToggle('slow');
-          }
-      }); 
-      }
-
-    //个人按钮点击，隐藏和显示关于界面
-    $("#me-button").click(function(){ 
-      $("#social-div").slideToggle();
-      $("#about-me").slideToggle();
-    });
-  }
-});
-</script>
-
-
+  
 
     </div>
 
     <!-- 多说评论框 -->    
+    
+      <div class="ds-thread" data-thread-key="2017/03/12/hello/" data-title="大家好" data-url="http://yoursite.com/2017/03/12/hello/"></div>
     
   </div>
 </div>
@@ -208,6 +174,19 @@ $(document).ready(function(){
 </html>
 
 
+
+  
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"ihongren"};
+(function() {
+  var ds = document.createElement('script');
+  ds.type = 'text/javascript';ds.async = true;
+  ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+  ds.charset = 'UTF-8';
+  (document.getElementsByTagName('head')[0] 
+   || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script>
 
 
 
