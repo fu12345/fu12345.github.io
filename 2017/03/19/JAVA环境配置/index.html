@@ -1,0 +1,264 @@
+
+
+
+
+
+
+<!doctype html>
+<html lang="zh-Hans">
+
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript" 
+src="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js">
+</script>
+<link href=  "/plugins/code-theme/tomorrow.css" type="text/css" rel="stylesheet" />
+<link rel="stylesheet" href="/plugins/github-markdown.css">
+
+<head>
+  <meta charset="UTF-8">
+  
+    
+    
+      <link rel="stylesheet" href="/css/legend.css">
+    
+  
+</head>
+
+<body id="body-x">
+<div id="layout-content">
+  <div id="menu-outer-x">
+  <div id="menu-inner">
+    
+    
+    <div id="site-title">
+      吾日三省吾身
+    </div>
+    
+
+     
+    <div>
+    
+      
+      <a href="/">首页</a>
+      
+    
+      
+      <a href="/archives">归档</a>
+      
+    
+    </div>
+  </div>
+</div> 
+  <div id="content-outer">
+    <div id="content-inner">
+      
+      
+  <article class="markdown-body">
+    <h1 id="post-title">JAVA概述及环境配置
+       
+        <div id="post-time" datetime="2017-03-19T12:37:17.147Z">
+          2017-03-19
+        </div>
+      
+    </h1>
+    <ul>
+<li><p><strong>JAVA概述</strong></p>
+<blockquote>
+<p>Java是一门面向对象编程语言，不仅吸收了C++语言的各种优点，还摒弃了C++里难以理解的多继承、指针等概念。Java可以编写桌面应用程序、Web应用程序、分布式系统和嵌入式系统应用程序等</p>
+<blockquote>
+<p>JAVA的Java的三种技术架构:</p>
+<blockquote>
+<p>JAVAEE：Java Platform Enterprise Edition，开发企业环境下的应用程序，主要针对web程序开发；</p>
+<p>JAVASE：Java Platform Standard Edition，完成桌面应用程序的开发，是其它两者的基础；</p>
+<p>JAVAME：Java Platform Micro Edition，开发电子消费产品和嵌入式设备，如手机中的程序；</p>
+</blockquote>
+<p>下面来聊一聊JDk和JRE</p>
+<blockquote>
+<p><a href="http://pan.baidu.com/s/1hsolfik" target="_blank" rel="external">JDK</a>：Java Development Kit，java的开发和   运行环境，由java的开发工具和jre组成。</p>
+<p>JRE：Java Runtime Environment，java程序的运行环境,java运行的所需的类库+JVM  (java虚拟机)。</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li><p><strong>配置环境变量</strong>  （配之前先将JDK下载好）</p>
+<blockquote>
+<p><strong>配置环境变量</strong>：让java jdk\bin目录下的工具，可以在任意目录下运行，原因是，将该工具所在目录告诉了系统，当使用该工具时，由系统帮我们去找指定的目录。</p>
+<p><strong>环境变量的配置</strong>：</p>
+<blockquote>
+<p>右击电脑–&gt;属性–&gt;高级系统配置–&gt;环境变量–&gt;出现这个页面</p>
+<blockquote>
+<p><img src="http://omt6xinyv.bkt.clouddn.com/java%E6%A6%82%E8%BF%B0/imagehuanjing.png" alt=""></p>
+</blockquote>
+<p>然后在系统变量里点新建 变量名填JAVA_HOME变量值填安装的JDK的路径  如下图</p>
+<blockquote>
+<p><img src="http://omt6xinyv.bkt.clouddn.com/java%E6%A6%82%E8%BF%B0/imagejdk.png" alt=""></p>
+</blockquote>
+<p><strong>注意</strong>：最后不要加分号 避免后期配置别的变量时会报错</p>
+<p>然后在path变量中添加%JAVA_HOME%\bin</p>
+<p>CLASSPATH变量可配可不配</p>
+<blockquote>
+<p>如果没有配置环境变量CLASSPATH，JAVA启动JVM后，会在当前目录下查找要运行的类文件；</p>
+<pre><code>如果指定了CLASSSPATH，那么会在指定的目录下查找要运行的类文件。
+</code></pre></blockquote>
+</blockquote>
+<p>OK了<br><strong>检测是否成功</strong></p>
+<blockquote>
+<p>windows+r输入cmd然后输入javac出现下边这个页面</p>
+<blockquote>
+<blockquote>
+<p><img src="http://omt6xinyv.bkt.clouddn.com/java%E6%A6%82%E8%BF%B0/imagejavac.png" alt=""></p>
+</blockquote>
+</blockquote>
+<p>在输入java会出现</p>
+<blockquote>
+<blockquote>
+<p><img src="http://omt6xinyv.bkt.clouddn.com/java%E6%A6%82%E8%BF%B0/imagejava.png" alt=""></p>
+</blockquote>
+</blockquote>
+<p>此时证明java环境配置OK了！</p>
+</blockquote>
+<p><strong>JAVAC命令和JAVA命令做什么事情呢？</strong></p>
+<blockquote>
+<p>首先JAVA是分两部分的：一个是<strong>编译</strong>，一个是<strong>运行</strong>。</p>
+<blockquote>
+<p>javac：负责的是编译的部分，当执行javac时，会启动java的编译器程序。对指定扩展名的.java文件进行编译。 生成了jvm可以识别的字节码文件。也就是class文件，也就是java的运行程序。</p>
+<p>java：负责运行的部分.会启动jvm.加载运行时所需的类库,并对class文件进行执行.<br>  一个文件要被执行,必须要有一个执行的起始点,这个起始点就是main函数.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+</ul>
+
+  </article>
+
+  
+    
+    
+      <div id="page-prev-next">
+        
+        
+          <div></div> 
+        
+
+        
+        
+          <a id="page-next-a" href="/2017/03/17/心得/"> 使用hexo搭建博客 → </a>
+        
+      </div>
+    
+    
+    
+    
+      
+      <div id="play-button"  style="background-color: #6d5aca; border: solid 2px #6d5aca;">
+  <img id="play-img" src="/images/playback_play.png"></img>
+</div>
+<audio id="bgaudio" loop="loop" preload="none"> 
+  <source src=http://omt6xinyv.bkt.clouddn.com/music/%E6%9D%8E%E7%8E%89%E5%88%9A%20-%20%E5%88%9A%E5%A5%BD%E9%81%87%E8%A7%81%E4%BD%A0.mp3 type="audio/mpeg">
+</audio>
+
+<script>
+$(document).ready(function(){
+  //播放按钮点击
+  var audio = $("#bgaudio")[0];
+  var img = $("#play-img")[0];
+  $("#play-button").click(function(){ 
+    if (audio.paused || audio.ended) {
+      audio.play();
+      img.src = "/images/playback_pause.png";
+    } else {
+      audio.pause();
+      img.src = "/images/playback_play.png";
+    }
+  });
+});
+</script>
+    
+
+    
+    
+
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div id="reward_comment">文章对我有帮助，打赏作者</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/weixi.png" alt="付丽杰 WeChat Pay"/>
+          <p>微信</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/zhifuba.png" alt="付丽杰 Alipay"/>
+          <p>支付宝</p>
+        </div> 
+      
+    </div>
+  </div>
+
+
+  
+
+    </div>
+
+    <!-- 多说评论框 -->    
+    
+      <div class="ds-thread" data-thread-key="2017/03/19/JAVA环境配置/" data-title="JAVA概述及环境配置" data-url="https://fu12345.github.io/2017/03/19/JAVA环境配置/"></div>
+    
+  </div>
+</div>
+
+<div id="bottom-outer">
+  
+  <div id="bottom-inner">
+    付丽杰 
+    ©2017 |Powered by  
+    <a href="http://hexo.io" target="_blank">Hexo</a> with theme 
+    <a href="https://github.com/iHongRen/legend" target="_blank">legend</a>
+  </div>
+    
+    
+    
+      <a href="/atom.xml">
+      
+      <img src=/images/rss.png height="18" width="18">
+      
+</div> 
+
+
+  
+  
+    <script src="/js/legend.js"></script>
+  
+
+
+</body>
+</html>
+
+
+
+  
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"ihongren"};
+(function() {
+  var ds = document.createElement('script');
+  ds.type = 'text/javascript';ds.async = true;
+  ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+  ds.charset = 'UTF-8';
+  (document.getElementsByTagName('head')[0] 
+   || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script>
+
+
+
+<script>
+$(window).on('load', function(){
+   $('pre').addClass('prettyprint').attr('style', 'overflow:auto;');
+   prettyPrint();
+ });
+</script>
+
